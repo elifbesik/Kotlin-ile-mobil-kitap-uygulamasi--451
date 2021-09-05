@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
+    app:startDestination="@id/listeFragment">
+
+    <fragment
+        android:id="@+id/listeFragment"
+        android:name="com.elifbesik.proje451.ListeFragment"
+        android:label="fragment_liste"
+        tools:layout="@layout/fragment_liste" >
+        <action
+            android:id="@+id/action_listeFragment_to_notlarFragment"
+            app:destination="@id/notlarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notlarFragment"
+        android:name="com.elifbesik.proje451.NotlarFragment"
+        android:label="fragment_notlar"
+        tools:layout="@layout/fragment_notlar" >
+        <action
+            android:id="@+id/action_notlarFragment_to_listeFragment"
+            app:destination="@id/listeFragment" />
+        <argument
+            android:name="bilgi"
+            app:argType="string"
+            android:defaultValue="menudengeldim" />
+        <argument
+            android:name="id"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
